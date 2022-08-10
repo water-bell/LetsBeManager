@@ -13,13 +13,13 @@ public class TextData : MonoBehaviour
     private void Awake()
     {
         TextDate();
-        TextPopularity();
-        TextGold();
+        
     }
 
     void Start()
     {
-        
+        TextPopularity();
+        TextGold();
     }
 
     // Update is called once per frame
@@ -31,9 +31,9 @@ public class TextData : MonoBehaviour
     {
         DateText.text = InitTime.ToString("yyyy년 MM월 dd일");
     }
-    private void TextPopularity()
+   private void TextPopularity()
     {
-        PopularityText.text += GameManager.instance.Popularity.ToString();
+        PopularityText.text += GameManager.instance.Popularity.ToString(); ;
     }
     private void TextGold()
     {
