@@ -4,15 +4,78 @@ using UnityEngine;
 
 public class SelectChar : MonoBehaviour
 {
+    /*Dictionary<int, PlayerStat> statMap; //Dictionary 선언
     public void SelectPicher()
     {
+        int name;
+
         Character pitcher = new Character();
         pitcher.TestStat();
-    }
+        for(int i = 0; ; i++)
+        {
+            name = i;
+            foreach(int Key in statMap.Keys)
+            {
+                if(Key == i)
+                {
 
+                    break;
+                }
+            }
+        }
+    }
+    */
+    static int p = 0;
+    static int b = 0;
+
+    string pitcherP0 = "";
+    string pitcherP1 = "";
+    string batterP0 = "";
+    string batterP1 = "";
+
+    List<int> pitcher0 = new List<int>() { 0, 0, 0, 0, 0 };
+    List<int> pitcher1 = new List<int>() { 0, 0, 0, 0, 0 };
+    List<int> batter0 = new List<int>() { 0, 0, 0, 0, 0 };
+    List<int> batter1 = new List<int>() { 0, 0, 0, 0, 0 };
+    public void SelectPitcher()
+    {
+        Character pitcher = new Character();
+
+        if (p == 0)  //기존 선수가 0명일때
+        {
+            pitcher0 = pitcher.RandStat();
+            pitcherP0 = pitcher.RandPoten();
+            p++;
+        }
+        else if (p == 1) //기존 선수가 1명일때
+        {
+            pitcher1 = pitcher.RandStat();
+            pitcherP1 = pitcher.RandPoten();
+            p++;
+        }
+
+        Debug.Log($"{pitcher0[0]},{pitcher0[1]},{pitcher0[2]},{pitcher0[3]},{pitcher0[4]},{pitcherP0}");
+        Debug.Log($"{pitcher1[0]},{pitcher1[1]},{pitcher1[2]},{pitcher1[3]},{pitcher1[4]},{pitcherP1}");
+
+    }
     public void SelectBatter()
     {
         Character batter = new Character();
-        batter.TestStat();
+        if (b == 0)
+        {
+            batter0 = batter.RandStat();
+            batterP0 = batter.RandPoten();
+            b++;
+        }
+        else if (b == 1)
+        {
+            batter1 = batter.RandStat();
+            batterP1 = batter.RandPoten();
+            p++;
+        }
+        else
+        {
+            return;
+        }
     }
 }
