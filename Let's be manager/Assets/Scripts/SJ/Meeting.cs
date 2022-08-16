@@ -9,6 +9,7 @@ using UnityEngine;
 public class Meeting : MonoBehaviour
 {
     List<int> PlayerStat = new List<int>() { }; // 선수 능력치 가져와서 리스트에 저장
+    List<int> StatExp = new List<int>() { }; // 선수 능력치의 경험치 가져와서 리스트에 저장 -->>>>> 스탯 리스트의 인덱스가 경험치의 리스트의 인덱스와 일치해야함!!
 
     int MaxIndex;
     int Max2ndIndex;
@@ -58,44 +59,36 @@ public class Meeting : MonoBehaviour
                 break;
             }
         }
-        FindStat(); // MeetingResult 값 받아와서 최대 최소 스탯 계산;
+        //FindStat(); // MeetingResult 값 받아와서 최대 최소 스탯 계산; ---> 리스트에 스탯 및 경험치 할당 후에 활성화
         switch (MeetingResult)
         {
             case 0:
-                Debug.Log("0");
-                // 모든 선수 스탯 경험치 20 감소; 
+                Debug.Log("모든 선수 스탯 경험치 20 감소");
                 break;
             case 1:
-                Debug.Log("1");
-                // 선수 잠재력 한단계 상승;
+                Debug.Log("선수 잠재력 한단계 상승");
                 break;
             case 2:
-                Debug.Log("2");
-                //선수 가장 낮은 스탯 2가지 경험치 30 증가;
+                Debug.Log("선수 가장 낮은 스탯 2가지 경험치 30 증가");
                 break;
             case 3:
-                Debug.Log("3");
-                //선수 가장 높은 스탯 2가지 경험치 20 감소;
+                Debug.Log("선수 가장 높은 스탯 2가지 경험치 20 감소");
                 break;
             case 4:
-                Debug.Log("4");
-                //선수 가장 높은 스탯 1가지 경험치 10 감소;
+                Debug.Log("선수 가장 높은 스탯 1가지 경험치 10 감소");
                 break;
             case 5:
-                Debug.Log("5");
-                //선수 가장 높은 스탯 1가지 경험치 40 증가;
+                Debug.Log("선수 가장 높은 스탯 1가지 경험치 40 증가");
                 break;
             case 6:
-                Debug.Log("6");
-                //선수 랜덤 스탯 1가지 경험치 10 감소;
+                Debug.Log("선수 랜덤 스탯 1가지 경험치 10 감소");
                 break;
             case 7:
-                Debug.Log("7");
-                //선수 가장 낮은 스탯 1가지 경험치 40 증가;
+                Debug.Log("선수 가장 낮은 스탯 1가지 경험치 40 증가");
                 break;
             case 8:
-                Debug.Log("8");               
-                break; //아무 일 없음
+                Debug.Log("아무 일도 일어나지 않음");               
+                break;
         }
     }
 }
