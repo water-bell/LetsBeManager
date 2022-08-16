@@ -4,39 +4,25 @@ using UnityEngine;
 
 public class SelectChar : MonoBehaviour
 {
-    /*Dictionary<int, PlayerStat> statMap; //Dictionary 선언
-    public void SelectPicher()
-    {
-        int name;
-
-        Character pitcher = new Character();
-        pitcher.TestStat();
-        for(int i = 0; ; i++)
-        {
-            name = i;
-            foreach(int Key in statMap.Keys)
-            {
-                if(Key == i)
-                {
-
-                    break;
-                }
-            }
-        }
-    }
-    */
+    #region 투수, 타자 능력치 변수선언
+    //게임에 존재하는 선수의 수
     static int p = 0;
     static int b = 0;
 
+    //잠재력
     string pitcherP0 = "";
     string pitcherP1 = "";
     string batterP0 = "";
     string batterP1 = "";
 
+    //잠재력을 제외한 능력치
     List<int> pitcher0 = new List<int>() { 0, 0, 0, 0, 0 };
     List<int> pitcher1 = new List<int>() { 0, 0, 0, 0, 0 };
     List<int> batter0 = new List<int>() { 0, 0, 0, 0, 0 };
     List<int> batter1 = new List<int>() { 0, 0, 0, 0, 0 };
+    #endregion
+
+    #region 투수 능력치 뽑기
     public void SelectPitcher()
     {
         Character pitcher = new Character();
@@ -58,6 +44,9 @@ public class SelectChar : MonoBehaviour
         Debug.Log($"{pitcher1[0]},{pitcher1[1]},{pitcher1[2]},{pitcher1[3]},{pitcher1[4]},{pitcherP1}");
 
     }
+    #endregion
+
+    #region 타자 능력치 뽑기
     public void SelectBatter()
     {
         Character batter = new Character();
@@ -78,4 +67,5 @@ public class SelectChar : MonoBehaviour
             return;
         }
     }
+    #endregion
 }

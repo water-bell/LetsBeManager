@@ -45,13 +45,17 @@ public class Character
     }
     #endregion
 
+    #region 잠재력 뽑기 메서드
     public string RandPoten()
     {
+        // 변수 초기화
         probs = 0;
         cumulative = 0;
         result = 0;
         Potential = "";
-        probs = Random.Range(0f, 101f);
+        
+        probs = Random.Range(0f, 101f); //랜덤한 확률
+
         for (int a = 0; a < 6; a++)
         {
             cumulative += weights[a]; //가중치 더하기
@@ -62,7 +66,7 @@ public class Character
                 break;
             }
         }
-        switch (result)
+        switch (result)  //확률 별로 분류
         {
             case 0:
                 Potential = "A";
@@ -85,14 +89,5 @@ public class Character
         }
         return Potential;
     }
-    //합이 150이 되는지 검사
-    /*public void TestStat()
-    {
-        while(hap != sum)
-        {
-            RandStat();
-        }
-        Debug.Log($"{ stats[0]}, {stats[1]}, {stats[2]}, {stats[3]}, {stats[4]}, {Potential}");
-    }
-    */
+    #endregion
 }
