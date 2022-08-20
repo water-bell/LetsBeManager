@@ -7,9 +7,9 @@ namespace Min
 {
     public class expoint : MonoBehaviour
     {
-        List<int> playerstat = new List<int>() { }; //선수 능력치
+        List<int> playerstat = new List<int>() { 0, 0, 0, 0, 0 } ; //선수 능력치
 
-        public List<int> adv = new List<int>(); //선수 능력치의 경험치
+        public List<int> adv = new List<int>() { 0, 0, 0, 0, 0 }; //선수 능력치의 경험치
         
 
         public void train1()
@@ -20,6 +20,7 @@ namespace Min
                 playerstat[0] = 0;
                 adv[0] += 1;
             }
+            Debug.Log("훈련1을 시작하겠습니다.");
             
         }
 
