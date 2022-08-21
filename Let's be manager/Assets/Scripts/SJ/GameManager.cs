@@ -21,4 +21,10 @@ public class GameManager : MonoBehaviour
     }
     public int Gold = 0;
     public int Popularity = 0;
+
+    //선수정보 투수2,타자2
+    public PlayerData pitcher0 = new PlayerData();
+    public PlayerData pitcher1 = new PlayerData();
+    public PlayerData batter0 = new PlayerData();
+    public PlayerData batter1 = new PlayerData();
 }

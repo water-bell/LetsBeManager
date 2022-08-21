@@ -5,8 +5,6 @@ using UnityEngine;
 public class Character
 {
     #region 변수 선언
-    // 투수의 능력치 제구/구속/변화/구위/멘탈/잠재력
-    // 타자의 능력치 정확/힘/주루/수비/멘탈/잠재력
 
     static int sum = 150; //능력치의 합이 150으로 일정
 
