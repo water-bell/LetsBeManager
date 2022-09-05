@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 public class TextData : MonoBehaviour
 {
-    private DateTime InitTime = new DateTime(2022, 1, 1); // 초기 날짜 2022년 1월 1일
+    //private DateTime InitTime = new DateTime(2022, 1, 1); // 초기 날짜 2022년 1월 1일 => Year년차 Week/MaxWeek주 로 수정
+    int MaxWeek = 52;
     public Text DateText;
     public Text PopularityText;
     public Text GoldText;
     private void Awake()
     {
-        TextDate();
+        
         
     }
 
@@ -20,6 +21,7 @@ public class TextData : MonoBehaviour
     {
         TextPopularity();
         TextGold();
+        TextDate();
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class TextData : MonoBehaviour
     }
     private void TextDate()
     {
-        DateText.text = InitTime.ToString("yyyy년 MM월 dd일");
+        DateText.text = GameManager.instance.Year.ToString() + "년차 " + GameManager.instance.Week + "/" + MaxWeek + "주";
     }
    private void TextPopularity()
     {

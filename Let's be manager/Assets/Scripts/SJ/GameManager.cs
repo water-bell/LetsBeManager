@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     }
     public int Gold = 0;
     public int Popularity = 0;
+    public int Year = 0;
+    public int Week = 1;
 
     //선수정보 투수2,타자2
     public PlayerData pitcher0 = new PlayerData();
