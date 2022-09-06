@@ -42,20 +42,21 @@ public class Loading : MonoBehaviour
     IEnumerator LoadGuage()
     {
         float timer = 0.0f;
+        float speed = 0.1f;
         while (timer != 10.0f)
         {
-            timer += Time.deltaTime;
+            timer += Time.deltaTime*speed;
             if (timer < 10.0f)
             {
                 GuageBar.fillAmount = Mathf.Lerp(GuageBar.fillAmount, 1.0f, timer);
-                if (GuageBar.fillAmount == 1.0f)
+                if (GuageBar.fillAmount >= 1.0f)
                 {
                     yield break;
                 }
             }
             else
             {
-                if (GuageBar.fillAmount == 1.0f)
+                if (GuageBar.fillAmount >= 1.0f)
                 {
                     yield break;
                 }
