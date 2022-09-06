@@ -7,12 +7,16 @@ public class Loading : MonoBehaviour
 {
     [SerializeField] Image GuageBar;
     [SerializeField] Text LoadingText;
-    float time;
-    int num;
+    private float time;
+    private int num;
+    private bool isEnded = true;
+    private float time_loading = 3;
+    private float time_current;
+    private float time_start;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(LoadGuage());
+        Reset_Loading();
     }
 
     // Update is called once per frame
@@ -20,47 +24,54 @@ public class Loading : MonoBehaviour
     {
         time += Time.deltaTime;
         num = (int)time;
-        switch (num%3)
+        if(!isEnded)
         {
-            case 0:
-                {
-                    LoadingText.text = "면담을 진행중입니다.";
-                    break;
-                }
-            case 1:
-                {
-                    LoadingText.text = "면담을 진행중입니다..";
-                    break;
-                }
-            case 2:
-                {
-                    LoadingText.text = "면담을 진행중입니다...";
-                    break;
-                }
+            switch (num % 3)
+            {
+                case 0:
+                    {
+                        LoadingText.text = "면담을 진행중입니다.";
+                        break;
+                    }
+                case 1:
+                    {
+                        LoadingText.text = "면담을 진행중입니다..";
+                        break;
+                    }
+                case 2:
+                    {
+                        LoadingText.text = "면담을 진행중입니다...";
+                        break;
+                    }
+            }
+        }
+        if (isEnded)
+            return;
+        Check_Loading();
+    }
+    private void Check_Loading() //로딩 완료 때까지 게이지 진행
+    {
+        time_current = Time.time - time_start;
+        if (time_current < time_loading)
+        {
+            GuageBar.fillAmount = time_current / time_loading;
+        }
+        else if (!isEnded)
+        {
+            End_Loading();
         }
     }
-    IEnumerator LoadGuage()
+    private void End_Loading() // 로딩 완료
     {
-        float timer = 0.0f;
-        float speed = 0.1f;
-        while (timer != 10.0f)
-        {
-            timer += Time.deltaTime*speed;
-            if (timer < 10.0f)
-            {
-                GuageBar.fillAmount = Mathf.Lerp(GuageBar.fillAmount, 1.0f, timer);
-                if (GuageBar.fillAmount >= 1.0f)
-                {
-                    yield break;
-                }
-            }
-            else
-            {
-                if (GuageBar.fillAmount >= 1.0f)
-                {
-                    yield break;
-                }
-            }
-        }
+        GuageBar.fillAmount = 1.0f;
+        isEnded = true;
+    }
+
+    private void Reset_Loading() //초기화
+    {
+        time_current = time_loading;
+        time_start = Time.time;
+        GuageBar.fillAmount = 0.0f;
+        isEnded = false;
     }
 }
