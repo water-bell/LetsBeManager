@@ -24,7 +24,7 @@ public class Loading : MonoBehaviour
     {
         time += Time.deltaTime;
         num = (int)time;
-        if(!isEnded)
+        if (!isEnded)
         {
             switch (num % 3)
             {

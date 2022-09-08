@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
             if (instance != this)
                 Destroy(this.gameObject);
         }
-        
+
     }
     public int Gold = 0;
     public int Popularity = 0;
