@@ -140,7 +140,7 @@ public class SelectChar : MonoBehaviour
 
         GameManager.instance.yesBtn = false;  //선수영입 상태를 false로 초기화
         //리롤을 위해서 임의로 게임매니저에 저장
-        GameManager.instance.rPick = r;
+        GameManager.instance.rPick = r; // 선수의 종류 투수 0, 타자 1
         GameManager.instance.rStat = s;
         GameManager.instance.rPoten = p;
 
@@ -166,6 +166,49 @@ public class SelectChar : MonoBehaviour
 
     public void yesButton()
     {
-        GameManager.instance.yesBtn = true;
+        GameManager.instance.yesBtn = true; //선수 스탯 저장 시작
+
+        if(GameManager.instance.rPick == 0) //투수일때 스탯저장
+        {
+            if(p == 0) //보유중인 투수가 0명일때
+            {
+                GameManager.instance.pitcher0.stats = GameManager.instance.rStat;
+                GameManager.instance.pitcher0.poten = GameManager.instance.rPoten;
+                p++; //보유중인 투수의 수 증가
+            }
+            else if(p == 1) //보유중인 투수가 1명일때
+            {
+                GameManager.instance.pitcher1.stats = GameManager.instance.rStat;
+                GameManager.instance.pitcher1.poten = GameManager.instance.rPoten;
+                p++;
+            }
+            else
+            {
+                Debug.Log("보유하고 있는 투수의 수를 초과하여 영입할 수 없습니다.");
+            }
+        }
+        if(GameManager.instance.rPick == 1) //타자일때 스탯저장
+        {
+            if(b == 0) //보유중인 타자가 0명일때
+            {
+                GameManager.instance.batter0.stats = GameManager.instance.rStat;
+                GameManager.instance.batter0.poten = GameManager.instance.rPoten;
+                b++;
+            }
+            else if(b == 1) //보유중인 타자가 1명일때
+            {
+                GameManager.instance.batter1.stats = GameManager.instance.rStat;
+                GameManager.instance.batter1.poten = GameManager.instance.rPoten;
+                b++;
+            }
+            else
+            {
+                Debug.Log("보유하고 있는 타자의 수를 초과하여 영입할 수 없습니다.");
+            }
+
+        }
+
+        GameManager.instance.yesBtn = false; //선수 스탯 저장 종료
+
     }
 }

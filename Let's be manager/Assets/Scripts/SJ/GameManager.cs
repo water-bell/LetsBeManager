@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     public bool yesBtn; //선수영입시 사용할 확인 값
     public List<int> rStat = new List<int>() { 0, 0, 0, 0, 0 }; //랜덤스탯을 저장할 임의의 변수
     public string rPoten = null; //랜덤 잠재력을 저장할 임의의 변수
-    public int rPick;
+    public int rPick; //선수의 종류 투수 0, 타자 1
 
     #endregion
 
