@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     public int Popularity = 0;
     public int Year = 0;
     public int Week = 1;
+    public string AcademyName = "활빈당";
+    public string ManagerName = "홍길동";
 
     #region 선수정보 투수2,타자2
     public PlayerData pitcher0 = new PlayerData();

@@ -1093,6 +1093,8 @@ GameObject:
   - component: {fileID: 863607277}
   - component: {fileID: 863607276}
   - component: {fileID: 863607275}
+  - component: {fileID: 863607279}
+  - component: {fileID: 863607278}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -1139,6 +1141,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &863607278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863607274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d319ce6fa47204a86d08562ade1257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &863607279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863607274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fc1cf13eb86e6429166e5d314055b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gold: 0
+  Popularity: 0
+  Year: 0
+  Week: 1
+  yesBtn: 0
+  rStat: 0000000000000000000000000000000000000000
+  rPoten: 
+  rPick: 0
 --- !u!1 &897274932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,6 +2068,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 863607278}
+        m_MethodName: JsonDelete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 863607278}
+        m_MethodName: JsonLoad
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1536903379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2320,6 +2376,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 863607275}
         m_MethodName: LoadFunc
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 863607278}
+        m_MethodName: JsonLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

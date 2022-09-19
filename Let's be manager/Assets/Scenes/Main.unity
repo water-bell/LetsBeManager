@@ -4013,6 +4013,8 @@ MonoBehaviour:
   DateText: {fileID: 245204338}
   PopularityText: {fileID: 672203243}
   GoldText: {fileID: 549310290}
+  AcademyNameText: {fileID: 1455253191}
+  ManagerNameText: {fileID: 1705023038}
 --- !u!1 &518220351
 GameObject:
   m_ObjectHideFlags: 0
@@ -5149,7 +5151,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC778\uC9C0\uB3C4 : "
+  m_Text: 
 --- !u!222 &672203244
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7258,6 +7260,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_MaxSize
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 1507833936, guid: ae1f2d180c246084ea930e80d088ec29, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1507833938, guid: ae1f2d180c246084ea930e80d088ec29, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 85
@@ -7421,6 +7427,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985024205298977194, guid: ae1f2d180c246084ea930e80d088ec29,
+        type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5091599523025020862, guid: ae1f2d180c246084ea930e80d088ec29,
         type: 3}
@@ -8837,7 +8848,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94c479b7c157834fb644f2642f64174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adv: []
 --- !u!1 &1131450021
 GameObject:
   m_ObjectHideFlags: 0
@@ -10779,6 +10789,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448575373}
   m_CullTransparentMesh: 0
+--- !u!114 &1455253191 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3985024205298977194, guid: ae1f2d180c246084ea930e80d088ec29,
+    type: 3}
+  m_PrefabInstance: {fileID: 924426797}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1474256685
 GameObject:
   m_ObjectHideFlags: 0
@@ -11757,6 +11779,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637192676}
   m_CullTransparentMesh: 0
+--- !u!114 &1705023038 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1507833936, guid: ae1f2d180c246084ea930e80d088ec29,
+    type: 3}
+  m_PrefabInstance: {fileID: 924426797}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1731559966
 GameObject:
   m_ObjectHideFlags: 0
@@ -13970,6 +14004,8 @@ MonoBehaviour:
   Popularity: 0
   Year: 0
   Week: 1
+  AcademyName: "\uD65C\uBE48\uB2F9"
+  ManagerName: "\uD64D\uAE38\uB3D9"
   yesBtn: 0
   rStat: 0000000000000000000000000000000000000000
   rPoten: 

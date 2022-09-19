@@ -11,6 +11,8 @@ public class TextData : MonoBehaviour
     public Text DateText;
     public Text PopularityText;
     public Text GoldText;
+    public Text AcademyNameText;
+    public Text ManagerNameText;
     private void Awake()
     {
         
@@ -22,12 +24,16 @@ public class TextData : MonoBehaviour
         TextPopularity();
         TextGold();
         TextDate();
+        TextAcademyName();
+        TextManagerName();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        TextPopularity();
+        TextGold();
+        TextDate();
     }
     private void TextDate()
     {
@@ -35,10 +41,20 @@ public class TextData : MonoBehaviour
     }
    private void TextPopularity()
     {
-        PopularityText.text += GameManager.instance.Popularity.ToString(); ;
+        PopularityText.text = "인지도 : "+ GameManager.instance.Popularity.ToString(); ;
     }
     private void TextGold()
     {
         GoldText.text = GameManager.instance.Gold.ToString() + "G";
     }
+    private void TextAcademyName()
+    {
+        AcademyNameText.text = GameManager.instance.AcademyName;
+    }
+    private void TextManagerName()
+    {
+        ManagerNameText.text = GameManager.instance.ManagerName;
+    }
+
 }
+
