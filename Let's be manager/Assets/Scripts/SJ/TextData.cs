@@ -6,13 +6,16 @@ using UnityEngine.UI;
 
 public class TextData : MonoBehaviour
 {
-    //private DateTime InitTime = new DateTime(2022, 1, 1); // 초기 날짜 2022년 1월 1일 => Year년차 Week/MaxWeek주 로 수정
     int MaxWeek = 52;
     public Text DateText;
     public Text PopularityText;
     public Text GoldText;
     public Text AcademyNameText;
     public Text ManagerNameText;
+    public Text CurrentPlayerNumText;
+    public Text GraduatedPlayerNumText;
+    public Text SuccessPlayerNumText;
+    public Text PopularityGradeText;
     private void Awake()
     {
         
@@ -21,11 +24,7 @@ public class TextData : MonoBehaviour
 
     void Start()
     {
-        TextPopularity();
-        TextGold();
-        TextDate();
-        TextAcademyName();
-        TextManagerName();
+       
     }
 
     // Update is called once per frame
@@ -34,6 +33,12 @@ public class TextData : MonoBehaviour
         TextPopularity();
         TextGold();
         TextDate();
+        TextAcademyName();
+        TextManagerName();
+        TextCurrentPlayerNum();
+        TextGraduatedPlayerNum();
+        TextSuccessPlayerNum();
+        TextPopularityGrade();
     }
     private void TextDate()
     {
@@ -56,5 +61,21 @@ public class TextData : MonoBehaviour
         ManagerNameText.text = GameManager.instance.ManagerName;
     }
 
+    private void TextCurrentPlayerNum()
+    {
+        CurrentPlayerNumText.text = GameManager.instance.CurrentPlayerNum.ToString();
+    }
+    private void TextGraduatedPlayerNum()
+    {
+        GraduatedPlayerNumText.text = GameManager.instance.GraduatedPlayerNum.ToString();
+    }
+    private void TextSuccessPlayerNum()
+    {
+        SuccessPlayerNumText.text = GameManager.instance.SuccessPlayerNum.ToString();
+    }
+    private void TextPopularityGrade()
+    {
+        PopularityGradeText.text = GameManager.instance.PopularityGrade.ToString() + "등급 (" + GameManager.instance.Popularity.ToString() +"100)";
+    }
 }
 
