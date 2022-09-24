@@ -21,12 +21,12 @@ public class GameManager : MonoBehaviour
 
     }
     #region 아카데미 및 게임 정보
-    public int Gold = 0; 
+    public int Gold = 0;
     public int Popularity = 0;
     public char PopularityGrade = 'C'; //인지도 등급
     public int Year = 0;
     public int Week = 1;
-    public string AcademyName = "활빈당"; 
+    public string AcademyName = "활빈당";
     public string ManagerName = "홍길동";
     public int CurrentPlayerNum = 0; //현재 인원 수
     public int GraduatedPlayerNum = 0; // 졸업 인원 수 
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     public class Player
     {
-        public string name;  
+        public string name;
         public int age;
 
         //투수인지 타자인지
