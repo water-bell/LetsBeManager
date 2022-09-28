@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     #region 아카데미 및 게임 정보
     public int Gold = 0;
     public int Popularity = 0;
-    public char PopularityGrade = 'C'; //인지도 등급
+    public char PopularityGrade = 'C'; //인지도 등급.
     public int Year = 0;
     public int Week = 1;
     public string AcademyName = "활빈당";
